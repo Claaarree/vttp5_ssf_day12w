@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Numbers Generated</title>
 </head>
 <body>
     <h1>Your list of <span data-th-text="${number}"></span> random numbers</h1>
-    <span data-th-each="number : ${generatedNumbers}">
-        <img src="number.url">
+    <span data-th-each="n : ${generatedNumbers}">
+        <p data-th-text="${n.url}"></p>
+        <p data-th-text="${n.name}"></p>
+        <img src="../static/images/${n.name}.jpg">
     </span>
 </body>
 </html>

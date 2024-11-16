@@ -14,8 +14,9 @@ public class NumberrRepo {
     public List<Numberr> getNumbers(){
         numbersList = new ArrayList<>();
         
-        for (int i = 0; i < 20; i++){
-            Numberr nbr = new Numberr(i, ".\\src\\main\\resources\\static\\images\\" + i + ".jpg");
+        for (int i = 1; i <= 20; i++){
+            Numberr nbr = new Numberr(i, "..\\static\\images\\" + i + ".jpg");
+            // Numberr nbr = new Numberr(i, "file:\\\\C:\\Users\\Clare Lau\\VTTP_SSF\\vttp5a_ssf_day12w\\src\\main\\resources\\static\\images\\" + i + ".jpg");
             numbersList.add(nbr);
         }
 

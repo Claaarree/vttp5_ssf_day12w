@@ -15,8 +15,7 @@ public class NumberrService {
     
     @Autowired
     NumberrRepo numberRepo;
-    @Autowired
-    Random random;
+    Random random = new Random();
     List<Numberr> generatedNumbers;
 
     public List<Numberr> getNumbers(){
@@ -25,11 +24,14 @@ public class NumberrService {
 
     public List<Numberr> generateNumbers(String number){
         generatedNumbers = new ArrayList<>();
-        int randomInt;
-        for (int i = 0; i < Integer.parseInt(number); i++){
-            randomInt = random.nextInt(20) + 1;
-            Numberr randomNumberr = getNumbers().get(randomInt - 1);
-            generatedNumbers.add(randomNumberr);
+        while (generatedNumbers.size() != Integer.parseInt(number)){
+            int randomInt = random.nextInt(20);
+            Numberr randomNumberr = getNumbers().get(randomInt);
+            //why issit adding repeats...
+            //also tried if .contains(randomNumberr) then continue
+            if (generatedNumbers.indexOf(randomNumberr) == -1){
+                generatedNumbers.add(randomNumberr);
+            } 
         }
 
         return generatedNumbers;

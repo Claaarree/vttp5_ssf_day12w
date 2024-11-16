@@ -8,7 +8,7 @@
 <body>
     <div>
         <p><b>How many numbers do you wish to generate?</b></p>
-        <form method="post" data-th-action="@{/numbers}">
+        <form method="get" data-th-action="@{/numbers}">
             <input name="number" type="text" placeholder="Number from 1-20">
             <button type="submit">Generate</button>
         </form>
