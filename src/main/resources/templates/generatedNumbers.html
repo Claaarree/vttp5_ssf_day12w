@@ -10,7 +10,8 @@
     <span data-th-each="n : ${generatedNumbers}">
         <p data-th-text="${n.url}"></p>
         <p data-th-text="${n.name}"></p>
-        <img src="../static/images/${n.name}.jpg">
+        <img data-th-src="${n.url}">
+        <!-- <img src="../static/images/${n.name}.jpg"> -->
     </span>
 </body>
 </html>
