@@ -24,14 +24,13 @@ public class NumberrService {
 
     public List<Numberr> generateNumbers(String number){
         generatedNumbers = new ArrayList<>();
+        List<Numberr> numbersList = getNumbers();
+        
         while (generatedNumbers.size() != Integer.parseInt(number)){
-            int randomInt = random.nextInt(20);
-            Numberr randomNumberr = getNumbers().get(randomInt);
-            //why issit adding repeats...
-            //also tried if .contains(randomNumberr) then continue
-            if (generatedNumbers.indexOf(randomNumberr) == -1){
-                generatedNumbers.add(randomNumberr);
-            } 
+            int randomInt = random.nextInt(numbersList.size());
+            Numberr randomNumberr = numbersList.remove(randomInt);
+            generatedNumbers.add(randomNumberr);
+                    
         }
 
         return generatedNumbers;
